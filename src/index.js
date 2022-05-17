@@ -11,4 +11,3 @@ const reservationBtns = document.querySelectorAll('[data-reservation]');
 reservationBtns.forEach((reservationBtn) => {
   reservationBtn.addEventListener('click', (e) => showPopUp(e.target.dataset.id));
 });
-
