@@ -72,3 +72,50 @@ footer {
   gap: 7rem;
   justify-content: center;
 }
+
+.reservations {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  background-color: rgb(226, 225, 225, 80%);
+  height: 100vh;
+}
+
+.reservations .reservation-inner {
+  position: relative;
+  width: 60%;
+  margin: 5em auto;
+  background-color: white;
+  border-radius: 1em;
+}
+
+.reservations .reservation-inner img {
+  border-top-left-radius: 1em;
+  width: 50%;
+}
+
+.reservation-heading {
+  display: flex;
+}
+
+.reservation-heading ul {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  padding: 3em 1em;
+}
+
+#close-reservation-popup {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  z-index: 1001;
+}
+
+#close-reservation-popup img {
+  width: 20px;
+  border-top-left-radius: 0;
+  cursor: pointer;
+}
