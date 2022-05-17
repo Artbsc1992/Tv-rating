@@ -66,6 +66,13 @@ footer {
   justify-content: center;
 }
 
+.showList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7rem;
+  justify-content: center;
+}
+
 .reservations {
   position: absolute;
   width: 100%;
