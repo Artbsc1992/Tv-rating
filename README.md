@@ -1,8 +1,6 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# Project Name
-
-> TV-rating
+# Tv-rating
 
 >  In this project we are making a Tv-rating webapp using an external API's
 
