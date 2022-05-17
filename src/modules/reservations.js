@@ -14,7 +14,7 @@ const showPopUp = async (showId) => {
             <li>${show.summary}</li>
             <li>Language: ${show.language}</li>
             <li>Avg. Rating: ${show.rating.average}</li>
-            <li>Network:  ${show.network.name} (${show.network.country.code})</li>
+            <li>Show type:  ${show.type}</li>
             <li>Genres: ${show.genres.map((genre) => `<span class="genre-label"> ${genre}</span>`)}</li>
           </ul>
         </section>
@@ -22,11 +22,14 @@ const showPopUp = async (showId) => {
     `
   } catch (error) {
     reservationsPopUp.innerHTML = `
-      Error HTML goes here
+      <div class="reservation-inner"> 
+        <p>Something went wrong. Please try again later. </p>
+        <small>${error && error}</small>
+      </div>
     `
   }
-  document.body.append(reservationsPopUp);
 
+  document.body.append(reservationsPopUp);
 }
 
 export default showPopUp;
