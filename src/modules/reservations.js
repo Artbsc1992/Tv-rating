@@ -4,6 +4,7 @@ reservationsPopUp.classList.add('reservations');
 
 const showPopUp = async (showId) => {
   try {
+    document.body.append(reservationsPopUp);
     const show = await fetchShow(showId);
     reservationsPopUp.innerHTML = `
       <div class="reservation-inner">
@@ -32,7 +33,6 @@ const showPopUp = async (showId) => {
   }
 
   reservationsPopUp.querySelector('#close-reservation-popup').addEventListener('click', closePopUp);
-  document.body.append(reservationsPopUp);
 }
 
 const closePopUp = () => {
