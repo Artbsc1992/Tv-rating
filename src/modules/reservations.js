@@ -1,6 +1,12 @@
-import { fetchShow } from "./reservations-api";
+import fetchShow from './reservations-api.js';
+
 const reservationsPopUp = document.createElement('div');
 reservationsPopUp.classList.add('reservations');
+
+const closePopUp = () => {
+  document.body.removeChild(reservationsPopUp);
+  reservationsPopUp.innerHTML = '';
+};
 
 const showPopUp = async (showId) => {
   try {
@@ -21,7 +27,7 @@ const showPopUp = async (showId) => {
           </ul>
         </section>
       </div>
-    `
+    `;
   } catch (error) {
     reservationsPopUp.innerHTML = `
       <div class="reservation-inner">
@@ -29,15 +35,10 @@ const showPopUp = async (showId) => {
         <p>Something went wrong. Please try again later. </p>
         <small>${error && error}</small>
       </div>
-    `
+    `;
   }
 
   reservationsPopUp.querySelector('#close-reservation-popup').addEventListener('click', closePopUp);
-}
-
-const closePopUp = () => {
-  document.body.removeChild(reservationsPopUp);
-  reservationsPopUp.innerHTML = '';
-}
+};
 
 export default showPopUp;

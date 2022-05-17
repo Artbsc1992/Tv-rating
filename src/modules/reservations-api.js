@@ -5,6 +5,6 @@ const fetchShow = async (showId) => {
   }
   const show = await res.json();
   return show;
-}
+};
 
-export { fetchShow }
+export default fetchShow;
