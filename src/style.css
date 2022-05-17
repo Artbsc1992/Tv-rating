@@ -1,3 +1,57 @@
 body {
-    font-family: "Poppins", sans-serif;
+  font-family: "Poppins", sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ol,
+ul,
+form {
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+}
+
+ol,
+ul {
+  list-style-type: none;
+}
+
+nav {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+nav img {
+  width: 150px;
+}
+
+nav ul {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+nav a {
+  text-decoration: none;
+  color: rgb(37, 36, 36);
+  padding: 10px;
+}
+
+nav a:hover {
+  background-color: rgb(219, 213, 213);
+  border-radius: 25px;
 }
