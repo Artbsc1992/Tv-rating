@@ -7,6 +7,7 @@ const showPopUp = async (showId) => {
     const show = await fetchShow(showId);
     reservationsPopUp.innerHTML = `
       <div class="reservation-inner">
+        <span id="close-reservation-popup" ><img src="./img/close.png" alt="Close Reservation Popup"/></span>
         <section class="reservation-heading">
           <img src="${show.image.original}" alt="${show.name}" />
           <ul>
@@ -22,14 +23,21 @@ const showPopUp = async (showId) => {
     `
   } catch (error) {
     reservationsPopUp.innerHTML = `
-      <div class="reservation-inner"> 
+      <div class="reservation-inner">
+        <span id="close-reservation-popup" ><img src="./img/close.png" alt="Close Reservation Popup"/></span>
         <p>Something went wrong. Please try again later. </p>
         <small>${error && error}</small>
       </div>
     `
   }
 
+  reservationsPopUp.querySelector('#close-reservation-popup').addEventListener('click', closePopUp);
   document.body.append(reservationsPopUp);
+}
+
+const closePopUp = () => {
+  document.body.removeChild(reservationsPopUp);
+  reservationsPopUp.innerHTML = '';
 }
 
 export default showPopUp;

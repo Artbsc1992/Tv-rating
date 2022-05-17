@@ -77,6 +77,7 @@ footer {
 }
 
 .reservations .reservation-inner {
+  position: relative;
   width: 60%;
   margin: 5em auto;
   background-color: white;
@@ -96,5 +97,18 @@ footer {
   display: flex;
   flex-direction: column;
   gap: 1em;
-  padding: 1em;
+  padding: 3em 1em;
+}
+
+#close-reservation-popup {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  z-index: 1001;
+}
+
+#close-reservation-popup img {
+  width: 20px;
+  border-top-left-radius: 0;
+  cursor: pointer;
 }
