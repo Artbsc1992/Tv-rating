@@ -1,4 +1,4 @@
-import { fetchShow } from './reservations-api.js';
+import { fetchReservations, fetchShow } from './reservations-api.js';
 
 const reservationsPopUp = document.createElement('div');
 reservationsPopUp.classList.add('reservations');
@@ -7,6 +7,11 @@ const closePopUp = () => {
   document.body.removeChild(reservationsPopUp);
   reservationsPopUp.innerHTML = '';
 };
+
+const renderReservations = async (showId, container) => {
+  const reservations = await fetchReservations(showId);
+
+}
 
 const showPopUp = async (showId) => {
   try {
@@ -26,8 +31,15 @@ const showPopUp = async (showId) => {
             <li>Genres: ${show.genres.map((genre) => `<span class="genre-label"> ${genre}</span>`)}</li>
           </ul>
         </section>
+        <section id="show-reservations">
+          <ul class="reservations-list">
+          </ul>
+        </section>
       </div>
     `;
+    const reservationsListContainer = reservationsPopUp.getElementById('show-reservations');
+    renderReservations(showId, reservationsListContainer);
+
   } catch (error) {
     reservationsPopUp.innerHTML = `
       <div class="reservation-inner">
