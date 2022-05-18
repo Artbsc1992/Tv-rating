@@ -155,6 +155,20 @@ footer {
   border: 2px rgb(63, 140, 255) solid;
 }
 
+#form-status.success {
+  padding: 0.8em;
+  background-color: rgb(192, 255, 200);
+  color: rgb(0, 71, 9);
+  border-radius: 0.7em;
+}
+
+#form-status.error {
+  padding: 0.8em;
+  background-color: pink;
+  color: rgb(71, 0, 0);
+  border-radius: 0.7em;
+}
+
 #show-reservations h3,
 #reservation-form h3 {
   font-weight: 600;

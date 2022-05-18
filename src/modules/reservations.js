@@ -32,10 +32,20 @@ const renderReservations = async (showId, container) => {
 
 
 const addReservation = async (username, date_start, date_end, item_id) => {
+  const formStatus = document.getElementById('form-status');
   try {
     await postReservation({ username, date_start, date_end, item_id });
-
+    formStatus.classList.add('success')
+    formStatus.innerHTML = 'Reservation Added'
+    setTimeout(() => {
+      formStatus.remove();
+    }, 2000)
   } catch (error) {
+    formStatus.classList.add('error')
+    formStatus.innerHTML = error
+    setTimeout(() => {
+      formStatus.remove();
+    }, 2000)
   }
 }
 
@@ -67,6 +77,7 @@ const showPopUp = async (showId) => {
         <section id="reservation-form">
           <h3>Add a Reservation</h3>
           <form id="add-reservation">
+            <span id="form-status"></span>
             <input type="text" name="username" id="username" placeholder="Your name" required/>
             <input type="date" name="date_start" id="date_start" placeholder="Start date" required />
             <input type="date" name="date_end" id="date_end" placeholder="End date" required />
