@@ -7,4 +7,18 @@ const fetchShow = async (showId) => {
   return show;
 };
 
-export default fetchShow;
+const fetchcomments = async (showId) => {
+  const res = await fetch(`https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/RAGwAMc1vyz/comments?item_id=1`);
+  if (res.status === 500) {
+    throw new Error('This show doesn\'t have comments yet.');
+  }
+
+  if (!res.ok) {
+    throw new Error('Something went wrong fetching the show\'s comments');
+  }
+
+  const comments = await res.json();
+  return comments;
+};
+
+export { fetchShow , fetchcomments };
