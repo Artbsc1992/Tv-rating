@@ -8,8 +8,8 @@ const fetchShow = async (showId) => {
 };
 
 const fetchReservations = async (showId) => {
-  const res = await fetch(`https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/RAGwAMc1vyzTWmF6xGjO/reservations?item_id=${showId}`)
-  if (res.status == 400) {
+  const res = await fetch(`https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/RAGwAMc1vyzTWmF6xGjO/reservations?item_id=${showId}`);
+  if (res.status === 400) {
     throw new Error('This show doesn\'t have reservations yet.');
   }
 
@@ -17,9 +17,8 @@ const fetchReservations = async (showId) => {
     throw new Error('Something went wrong fetching the show\'s reservations');
   }
 
-
   const reservations = await res.json();
   return reservations;
-}
+};
 
 export { fetchShow, fetchReservations };

@@ -20,15 +20,15 @@ const renderReservations = async (showId, container) => {
         ${reservation.date_start} to ${reservation.date_end} by ${reservation.username}
       `;
       container.append(item);
-    })
+    });
   } catch (error) {
     const item = document.createElement('li');
     item.innerHTML = `
       <span class="reservations-error">${error}</span>
-    `
-    container.append(item)
+    `;
+    container.append(item);
   }
-}
+};
 
 const showPopUp = async (showId) => {
   try {
