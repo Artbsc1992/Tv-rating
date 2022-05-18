@@ -1,6 +1,9 @@
 import fetchShows from './fetchAPI.js';
-import showPopUp from "./reservations";
-import showPop from "./comment";
+
+import showPopUp from './reservations';
+
+import showPop from './comment';
+
 const ul = document.createElement('ul');
 ul.classList = 'showList';
 const div = document.querySelector('.shows');
@@ -16,8 +19,6 @@ const render = async () => {
             <button data-comment="true" data-id="${show.id}">Comments</button>
             <button data-reservation="true" data-id="${show.id}">Reservations</button>
         `;
-
-
     const reservationBtn = li.querySelector('[data-reservation]');
 
     ul.append(li);
