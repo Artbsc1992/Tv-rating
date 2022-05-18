@@ -20,5 +20,17 @@ const fetchcomments = async (showId) => {
   const comments = await res.json();
   return comments;
 };
+const fetchReservations = async (showId) => {
+  const res = await fetch(`https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/RAGwAMc1vyzTWmF6xGjO/reservations?item_id=${showId}`);
+  if (res.status === 400) {
+    throw new Error('This show doesn\'t have reservations yet.');
+  }
 
-export { fetchShow, fetchcomments };
+  if (!res.ok) {
+    throw new Error('Something went wrong fetching the show\'s reservations');
+  }
+
+  const reservations = await res.json();
+  return reservations;
+};
+export { fetchShow, fetchcomments, fetchReservations };

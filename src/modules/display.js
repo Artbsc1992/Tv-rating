@@ -4,18 +4,31 @@ import showPopUp from './reservations.js';
 
 import showPop from './comment.js';
 
+import { getLikes } from './likesApi.js';
+
 const ul = document.createElement('ul');
 ul.classList = 'showList';
 const div = document.querySelector('.shows');
 div.append(ul);
+
+const filterLikes = (showId, likesList) => {
+  const result = likesList.find((item) => +item.item_id === showId);
+  if (!result) {
+    return 'Likes 0';
+  }
+  return `Likes ${result.likes}`;
+};
 const render = async () => {
   ul.innerHTML = '';
   const shows = await fetchShows();
+  const fetchedLikes = await getLikes();
   shows.forEach((show) => {
     const li = document.createElement('li');
+    const likes = filterLikes(show.id, fetchedLikes);
     li.innerHTML = `
-            <img src="${show.img}" alt="logo">
-            <p>${show.name} ${show.id}</p>
+            <img src="${show.img}" alt="movie">
+            <p class='show-name'>${show.name} ${show.id}</p>
+            <button data-id='${show.id}' class='like'>${likes}</button>
             <button data-comment="true" data-id="${show.id}">Comments</button>
             <button data-reservation="true" data-id="${show.id}">Reservations</button>
         `;
