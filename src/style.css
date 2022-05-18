@@ -106,6 +106,29 @@ footer {
   padding: 3em 1em;
 }
 
+.reservation-heading ul a {
+  text-decoration: none;
+}
+
+#show-reservations {
+  padding: 5em;
+  text-align: center;
+}
+
+#show-reservations h3 {
+  font-weight: 600;
+}
+
+#show-reservations li {
+  margin-top: 1em;
+}
+
+#show-reservations .reservations-error {
+  padding: 0.8em;
+  background-color: pink;
+  color: rgb(71, 0, 0);
+  border-radius: 0.7em;
+}
 #close-reservation-popup {
   position: absolute;
   top: 15px;

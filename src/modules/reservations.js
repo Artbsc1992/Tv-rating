@@ -45,7 +45,8 @@ const showPopUp = async (showId) => {
             <li>Avg. Rating: ${show.rating.average}</li>
             <li>Show type:  ${show.type}</li>
             <li>Genres: ${show.genres.map((genre) => `<span class="genre-label"> ${genre}</span>`)}</li>
-          </ul>
+            <li>Official Site <a href="${show.officialSite}">🌐</a></li>
+            </ul>
         </section>
         <section id="show-reservations">
           <h3>Show's Reservations</h3>
