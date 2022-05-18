@@ -49,4 +49,4 @@ const showPop = async (showId) => {
   comment.querySelector('#close-reservation-popup').addEventListener('click', closePopUp);
 };
 
-export default showPop ;
+export default showPop;
