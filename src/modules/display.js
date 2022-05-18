@@ -14,7 +14,7 @@ div.append(ul);
 const filterLikes = (showId, likesList) => {
   const result = likesList.find((item) =>{return +item.item_id === showId})
   if(!result){
-    return 0;
+    return `Likes 0`;
   } else {
     return `Likes ${result.likes}`;
   }
