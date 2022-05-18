@@ -1,4 +1,4 @@
-import { fetchShow, fetchcomments }  from './reservations-api.js';
+import { fetchShow, fetchcomments } from './reservations-api.js';
 
 const comment = document.createElement('div');
 comment.classList.add('reservations');
@@ -61,7 +61,7 @@ const showPop = async (showId) => {
       </div>
     `;
     const commentscontainer = comment.querySelector('#show-reservations');
-    renderComments(showId, commentscontainer)
+    renderComments(showId, commentscontainer);
   } catch (error) {
     comment.innerHTML = `
       <div class="reservation-inner">
