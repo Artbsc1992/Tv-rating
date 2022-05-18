@@ -66,6 +66,10 @@ footer {
   justify-content: center;
 }
 
+.notScrollable {
+  overflow: hidden;
+}
+
 .showList {
   display: flex;
   flex-wrap: wrap;
@@ -74,12 +78,15 @@ footer {
 }
 
 .reservations {
-  position: absolute;
+  position: fixed;
   width: 100%;
+  bottom: 0;
   top: 0;
   left: 0;
+  right: 0;
   z-index: 1000;
   background-color: rgb(226, 225, 225, 80%);
+  overflow: scroll;
 }
 
 .reservations .reservation-inner {

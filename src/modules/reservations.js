@@ -4,6 +4,7 @@ const reservationsPopUp = document.createElement('div');
 reservationsPopUp.classList.add('reservations');
 
 const closePopUp = () => {
+  document.body.classList.remove('notScrollable');
   document.body.removeChild(reservationsPopUp);
   reservationsPopUp.innerHTML = '';
 };
@@ -31,6 +32,7 @@ const renderReservations = async (showId, container) => {
 
 const showPopUp = async (showId) => {
   try {
+    document.body.classList.add('notScrollable');
     document.body.append(reservationsPopUp);
     const show = await fetchShow(showId);
     reservationsPopUp.innerHTML = `
