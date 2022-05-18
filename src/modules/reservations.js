@@ -30,24 +30,25 @@ const renderReservations = async (showId, container) => {
   }
 };
 
-
-const addReservation = async (username, date_start, date_end, item_id) => {
+const addReservation = async (username, dateStart, dateEnd, itemId) => {
   const formStatus = document.getElementById('form-status');
   try {
-    await postReservation({ username, date_start, date_end, item_id });
-    formStatus.classList.add('success')
-    formStatus.innerHTML = 'Reservation Added'
+    await postReservation({
+      username, date_start: dateStart, date_end: dateEnd, item_id: itemId,
+    });
+    formStatus.classList.add('success');
+    formStatus.innerHTML = 'Reservation Added';
     setTimeout(() => {
       formStatus.remove();
-    }, 2000)
+    }, 2000);
   } catch (error) {
-    formStatus.classList.add('error')
-    formStatus.innerHTML = error
+    formStatus.classList.add('error');
+    formStatus.innerHTML = error;
     setTimeout(() => {
       formStatus.remove();
-    }, 2000)
+    }, 2000);
   }
-}
+};
 
 const showPopUp = async (showId) => {
   try {
@@ -90,11 +91,11 @@ const showPopUp = async (showId) => {
     const reservationForm = reservationsPopUp.querySelector('#add-reservation');
     reservationForm.addEventListener('submit', async (e) => {
       e.preventDefault();
-      const { username, date_start, date_end } = reservationForm.elements;
-      await addReservation(username.value, date_start.value, date_end.value, showId);
+      const { username, date_start: dateStart, date_end: dateEnd } = reservationForm.elements;
+      await addReservation(username.value, dateStart.value, dateEnd.value, showId);
       await renderReservations(showId, reservationsListContainer);
       reservationForm.reset();
-    })
+    });
     renderReservations(showId, reservationsListContainer);
   } catch (error) {
     reservationsPopUp.innerHTML = `

@@ -142,6 +142,11 @@ footer {
   cursor: pointer;
 }
 
+.comment-sec input {
+  width: 30%;
+  padding: 5px;
+}
+
 #add-reservation input {
   height: 2.8em;
   padding: 5px 10px;
@@ -241,11 +246,6 @@ footer {
   gap: 20px;
   margin-left: 40px;
   margin-bottom: 15px;
-}
-
-.comment-sec input {
-  width: 30%;
-  padding: 5px;
 }
 
 .comment-sec textarea {
