@@ -55,6 +55,16 @@ const showPopUp = async (showId) => {
           <ul class="reservations-list">
           </ul>
         </section>
+        <section id="reservation-form">
+          <h3>Add a Reservation</h3>
+          <form name="reservationForm">
+            <input type="text" name="username" id="username" placeholder="Your name" />
+            <input type="text" name="date_start" id="date_start" placeholder="Start date" />
+            <input type="text" name="date_end" id="date_end" placeholder="End date" />
+            <input type="hidden" name="item_id" id="item_id" value="${show.id}" />
+            <button type="submit">Reserve</button>
+          </form>
+        </section>
       </div>
     `;
     const reservationsListContainer = reservationsPopUp.querySelector('#show-reservations');
