@@ -4,7 +4,7 @@ import showPopUp from './reservations.js';
 
 import showPop from './comment.js';
 
-import { getLikes, putLikes } from './likesApi.js';
+import { getLikes } from './likesApi.js';
 
 const ul = document.createElement('ul');
 ul.classList = 'showList';
@@ -12,20 +12,19 @@ const div = document.querySelector('.shows');
 div.append(ul);
 
 const filterLikes = (showId, likesList) => {
-  const result = likesList.find((item) =>{return +item.item_id === showId})
-  if(!result){
-    return `Likes 0`;
-  } else {
-    return `Likes ${result.likes}`;
+  const result = likesList.find((item) => +item.item_id === showId);
+  if (!result) {
+    return 'Likes 0';
   }
-}
+  return `Likes ${result.likes}`;
+};
 const render = async () => {
   ul.innerHTML = '';
   const shows = await fetchShows();
   const fetchedLikes = await getLikes();
   shows.forEach((show) => {
     const li = document.createElement('li');
-    const likes = filterLikes(show.id, fetchedLikes)
+    const likes = filterLikes(show.id, fetchedLikes);
     li.innerHTML = `
             <img src="${show.img}" alt="movie">
             <p class='show-name'>${show.name} ${show.id}</p>
@@ -42,10 +41,7 @@ const render = async () => {
 
     ul.append(li);
     commentBtn.addEventListener('click', (e) => showPop(e.target.dataset.id));
-
   });
-  
-
 };
 
 export default render;
