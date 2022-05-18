@@ -12,11 +12,11 @@ const renderComments = async (showId, container) => {
   container = container.querySelector('ul');
   container.innerHTML = '';
   try {
-    const reservations = await fetchcomments(showId);
-    reservations.forEach((comments) => {
+    const comm = await fetchcomments(showId);
+    comm.forEach((comments) => {
       const item = document.createElement('li');
       item.innerHTML = `
-        ${comments.comment} to ${comments.creation_date} by ${comments.username}
+      ${comments.creation_date} ${comments.username} :  ${comments.comment}  
       `;
       container.append(item);
     });

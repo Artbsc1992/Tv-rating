@@ -7,8 +7,8 @@ const fetchShow = async (showId) => {
   return show;
 };
 
-const fetchcomments = async () => {
-  const res = await fetch('https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/RAGwAMc1vyz/comments?item_id=1');
+const fetchcomments = async (showId) => {
+  const res = await fetch(`https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/RAGwAMc1vyzTWmF6xGjO/comments?item_id=${showId}`);
   if (res.status === 400) {
     throw new Error('This show doesn\'t have comments yet.');
   }
