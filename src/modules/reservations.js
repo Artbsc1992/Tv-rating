@@ -9,8 +9,24 @@ const closePopUp = () => {
 };
 
 const renderReservations = async (showId, container) => {
-  const reservations = await fetchReservations(showId);
-
+  container = container.querySelector('ul');
+  container.innerHTML = '';
+  try {
+    const reservations = await fetchReservations(showId);
+    reservations.forEach((reservation) => {
+      const item = document.createElement('li');
+      item.innerHTML = `
+        ${reservation.date_start} to ${reservation.date_end} by ${reservation.username}
+      `;
+      container.append(item);
+    })
+  } catch (error) {
+    const item = document.createElement('li');
+    item.innerHTML = `
+      <span class="reservations-error">${error}</span>
+    `
+    container.append(item)
+  }
 }
 
 const showPopUp = async (showId) => {
@@ -32,14 +48,14 @@ const showPopUp = async (showId) => {
           </ul>
         </section>
         <section id="show-reservations">
+          <h3>Show's Reservations</h3>
           <ul class="reservations-list">
           </ul>
         </section>
       </div>
     `;
-    const reservationsListContainer = reservationsPopUp.getElementById('show-reservations');
+    const reservationsListContainer = reservationsPopUp.querySelector('#show-reservations');
     renderReservations(showId, reservationsListContainer);
-
   } catch (error) {
     reservationsPopUp.innerHTML = `
       <div class="reservation-inner">

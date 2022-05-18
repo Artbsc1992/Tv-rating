@@ -1,4 +1,4 @@
-import fetchShow from './reservations-api.js';
+import { fetchShow } from './reservations-api.js';
 
 const comment = document.createElement('div');
 comment.classList.add('reservations');
