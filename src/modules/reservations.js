@@ -1,4 +1,4 @@
-import fetchShow from './reservations-api.js';
+import { fetchShow } from './reservations-api.js';
 
 const reservationsPopUp = document.createElement('div');
 reservationsPopUp.classList.add('reservations');
