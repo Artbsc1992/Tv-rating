@@ -1,8 +1,8 @@
 import fetchShows from './fetchAPI.js';
 
-import showPopUp from './reservations';
+import showPopUp from './reservations.js';
 
-import showPop from './comment';
+import showPop from './comment.js';
 
 const ul = document.createElement('ul');
 ul.classList = 'showList';
@@ -28,7 +28,6 @@ const render = async () => {
 
     ul.append(li);
     commentBtn.addEventListener('click', (e) => showPop(e.target.dataset.id));
-
   });
 };
 
