@@ -1,4 +1,4 @@
-import { fetchShow, fetchReservations } from './reservations-api.js';
+import { fetchShow, fetchReservations, postReservation } from './reservations-api.js';
 
 const reservationsPopUp = document.createElement('div');
 reservationsPopUp.classList.add('reservations');
@@ -30,6 +30,16 @@ const renderReservations = async (showId, container) => {
   }
 };
 
+
+const addReservation = async (username, date_start, date_end, item_id) => {
+  try {
+    await postReservation({ username, date_start, date_end, item_id });
+    console.log('Item Added')
+  } catch (error) {
+    console.log(error)
+  }
+}
+
 const showPopUp = async (showId) => {
   try {
     document.body.classList.add('notScrollable');
@@ -57,17 +67,24 @@ const showPopUp = async (showId) => {
         </section>
         <section id="reservation-form">
           <h3>Add a Reservation</h3>
-          <form name="reservationForm">
+          <form id="reservationForm">
             <input type="text" name="username" id="username" placeholder="Your name" />
-            <input type="text" name="date_start" id="date_start" placeholder="Start date" />
-            <input type="text" name="date_end" id="date_end" placeholder="End date" />
-            <input type="hidden" name="item_id" id="item_id" value="${show.id}" />
+            <input type="date" name="date_start" id="date_start" placeholder="Start date" />
+            <input type="date" name="date_end" id="date_end" placeholder="End date" />
             <button type="submit">Reserve</button>
           </form>
         </section>
       </div>
     `;
     const reservationsListContainer = reservationsPopUp.querySelector('#show-reservations');
+    const reservationForm = reservationsPopUp.querySelector('#reservationForm');
+    reservationForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const { username, date_start, date_end } = reservationForm.elements;
+      await addReservation(username.value, date_start.value, date_end.value, showId);
+      await renderReservations(showId, reservationsListContainer);
+      reservationForm.reset();
+    })
     renderReservations(showId, reservationsListContainer);
   } catch (error) {
     reservationsPopUp.innerHTML = `

@@ -33,4 +33,24 @@ const fetchReservations = async (showId) => {
   const reservations = await res.json();
   return reservations;
 };
-export { fetchShow, fetchcomments, fetchReservations };
+
+const postReservation = async (reservation) => {
+  reservation.date_start = new Date(reservation.date_start);
+  reservation.date_end = new Date(reservation.date_end);
+
+  const res = await fetch(`https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/RAGwAMc1vyzTWmF6xGjO/reservations`, {
+    method: 'POST',
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify(reservation)
+  });
+
+  if (!res.ok) {
+    throw new Error('Something went wrong while adding a new reservation.');
+  }
+
+  return true
+}
+
+export { fetchShow, fetchcomments, fetchReservations, postReservation };
