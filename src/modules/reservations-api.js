@@ -9,7 +9,7 @@ const fetchShow = async (showId) => {
 
 const fetchcomments = async () => {
   const res = await fetch('https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/RAGwAMc1vyz/comments?item_id=1');
-  if (res.status === 500) {
+  if (res.status === 400) {
     throw new Error('This show doesn\'t have comments yet.');
   }
 

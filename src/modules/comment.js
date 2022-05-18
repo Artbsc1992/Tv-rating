@@ -16,7 +16,7 @@ const renderComments = async (showId, container) => {
     reservations.forEach((comments) => {
       const item = document.createElement('li');
       item.innerHTML = `
-        ${comments.date_start} to ${comments.date_end} by ${comments.username}
+        ${comments.comment} to ${comments.creation_date} by ${comments.username}
       `;
       container.append(item);
     });
