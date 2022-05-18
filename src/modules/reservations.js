@@ -34,9 +34,8 @@ const renderReservations = async (showId, container) => {
 const addReservation = async (username, date_start, date_end, item_id) => {
   try {
     await postReservation({ username, date_start, date_end, item_id });
-    console.log('Item Added')
+
   } catch (error) {
-    console.log(error)
   }
 }
 
@@ -67,17 +66,17 @@ const showPopUp = async (showId) => {
         </section>
         <section id="reservation-form">
           <h3>Add a Reservation</h3>
-          <form id="reservationForm">
-            <input type="text" name="username" id="username" placeholder="Your name" />
-            <input type="date" name="date_start" id="date_start" placeholder="Start date" />
-            <input type="date" name="date_end" id="date_end" placeholder="End date" />
+          <form id="add-reservation">
+            <input type="text" name="username" id="username" placeholder="Your name" required/>
+            <input type="date" name="date_start" id="date_start" placeholder="Start date" required />
+            <input type="date" name="date_end" id="date_end" placeholder="End date" required />
             <button type="submit">Reserve</button>
           </form>
         </section>
       </div>
     `;
     const reservationsListContainer = reservationsPopUp.querySelector('#show-reservations');
-    const reservationForm = reservationsPopUp.querySelector('#reservationForm');
+    const reservationForm = reservationsPopUp.querySelector('#add-reservation');
     reservationForm.addEventListener('submit', async (e) => {
       e.preventDefault();
       const { username, date_start, date_end } = reservationForm.elements;
