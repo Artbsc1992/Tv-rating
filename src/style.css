@@ -227,3 +227,8 @@ footer {
   padding: 20px;
   background-color: rgba(158, 153, 153, 0.8);
 }
+
+.container {
+  background-color: aqua;
+  padding: 20px;
+}
