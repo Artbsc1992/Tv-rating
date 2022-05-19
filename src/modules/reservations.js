@@ -9,7 +9,7 @@ const closePopUp = () => {
   reservationsPopUp.innerHTML = '';
 };
 
-const resCounter = (reservationsList) => reservationsList.length;
+export const resCounter = (reservationsList) => reservationsList.length;
 
 const renderReservations = async (showId, container) => {
   const counterContainer = container.querySelector('#reservations-counter');
@@ -42,14 +42,16 @@ const addReservation = async (username, dateStart, dateEnd, itemId) => {
     });
     formStatus.classList.add('success');
     formStatus.innerHTML = 'Reservation Added';
+    formStatus.hidden = false;
     setTimeout(() => {
-      formStatus.remove();
+      formStatus.hidden = true;
     }, 2000);
   } catch (error) {
     formStatus.classList.add('error');
     formStatus.innerHTML = error;
+    formStatus.hidden = false;
     setTimeout(() => {
-      formStatus.remove();
+      formStatus.hidden = true;
     }, 2000);
   }
 };
@@ -83,9 +85,9 @@ const showPopUp = async (showId) => {
           <h3>Add a Reservation</h3>
           <form id="add-reservation">
             <span id="form-status"></span>
-            <input type="text" name="username" id="username" placeholder="Your name" required/>
-            <input type="date" name="date_start" id="date_start" placeholder="Start date" required />
-            <input type="date" name="date_end" id="date_end" placeholder="End date" required />
+            <input type="text" name="username" id="username" placeholder="Your name" />
+            <input type="date" name="date_start" id="date_start" placeholder="Start date"  />
+            <input type="date" name="date_end" id="date_end" placeholder="End date"  />
             <button type="submit">Reserve</button>
           </form>
         </section>

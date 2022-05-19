@@ -4,12 +4,15 @@ import showPopUp from './reservations.js';
 
 import showPop from './comment.js';
 
+import counterShows from './counter-shows.js';
+
 import { getLikes, putLikes } from './likesApi.js';
 
 const ul = document.createElement('ul');
 ul.classList = 'showList';
 const div = document.querySelector('.shows');
 div.append(ul);
+const counter = document.querySelector('a');
 
 const filterLikes = (showId, likesList) => {
   const result = likesList.find((item) => +item.item_id === showId);
@@ -18,9 +21,13 @@ const filterLikes = (showId, likesList) => {
   }
   return result.likes;
 };
+
 const render = async () => {
   ul.innerHTML = '';
   const shows = await fetchShows();
+
+  counter.textContent = `Shows (${counterShows(shows)})`;
+
   const fetchedLikes = await getLikes();
   shows.forEach((show) => {
     const li = document.createElement('li');
