@@ -53,6 +53,24 @@ const postReservation = async (reservation) => {
   return true;
 };
 
+const postComment = async (commentss) => {
+
+
+  const res = await fetch('https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/RAGwAMc1vyzTWmF6xGjO/comments', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(commentss),
+  });
+
+  if (!res.ok) {
+    throw new Error('Something went wrong while adding a new reservation.');
+  }
+
+  return true;
+};
+
 export {
-  fetchShow, fetchcomments, fetchReservations, postReservation,
+  fetchShow, fetchcomments, fetchReservations, postReservation, postComment
 };
