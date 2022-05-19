@@ -276,6 +276,28 @@ footer {
   background-color: rgba(158, 153, 153, 0.8);
 }
 
+.heart {
+  background-image: url(../assets/icons/love.png);
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-position-y: 130%;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-size: 15px;
+}
+
+.heart.active {
+  background-image: url(../assets/icons/heart.png);
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-position-y: 130%;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-size: 15px;
+}
+
 .container {
   background-color: aqua;
   padding: 20px;
