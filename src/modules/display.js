@@ -25,7 +25,7 @@ const filterLikes = (showId, likesList) => {
 const render = async () => {
   ul.innerHTML = '';
   const shows = await fetchShows();
-  
+
   counter.textContent = `Shows (${counterShows(shows)})`;
 
   const fetchedLikes = await getLikes();
