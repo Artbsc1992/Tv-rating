@@ -33,12 +33,14 @@ const render = async () => {
     const li = document.createElement('li');
     let likes = filterLikes(show.id, fetchedLikes);
     li.innerHTML = `
-            <img src="${show.img}" alt="movie">
-            <p class='show-name'>${show.name} ${show.id}</p>
+            <img class='home-posters' src="${show.img}" alt="movie">
+            <img class='heart' src='../img/love.png' alt='heart'>
+            <p class='show-name'>${show.name}</p>
             <button type='button' data-id='${show.id}' class='like'>Likes ${likes}</button>
-            <span class='heart'></span>
-            <button data-comment="true" data-id="${show.id}">Comments</button>
-            <button data-reservation="true" data-id="${show.id}">Reservations</button>
+            <div class='btns'>
+            <button class='comment-btn' data-comment="true" data-id="${show.id}">Comments</button>
+            <button class='reservation-btn' data-reservation="true" data-id="${show.id}">Reservations</button>
+            </div>
         `;
     const reservationBtn = li.querySelector('[data-reservation]');
 

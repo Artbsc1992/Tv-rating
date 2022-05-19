@@ -1,5 +1,6 @@
 body {
   font-family: "Poppins", sans-serif;
+  background: linear-gradient(to right, #231d53, #302b63, #231d53);
 }
 
 *,
@@ -37,6 +38,7 @@ nav {
 
 nav img {
   width: 150px;
+  filter: invert(100%);
 }
 
 nav ul {
@@ -47,13 +49,17 @@ nav ul {
 
 nav a {
   text-decoration: none;
-  color: rgb(37, 36, 36);
+  color: #fff;
   padding: 10px;
+}
+
+footer h3 {
+  color: #fff;
 }
 
 footer h3 a {
   text-decoration: none;
-  color: rgb(37, 36, 36);
+  color: #fff;
 }
 
 nav a:hover {
@@ -64,6 +70,7 @@ nav a:hover {
 footer {
   display: flex;
   justify-content: center;
+  padding: 5rem;
 }
 
 .notScrollable {
@@ -293,25 +300,19 @@ footer {
 }
 
 .heart {
-  background-image: url(../assets/icons/love.png);
-  background-repeat: no-repeat;
-  background-position: center bottom;
-  background-position-y: 130%;
-  display: inline-block;
+  position: relative;
+  top: -65%;
+  left: 82%;
   width: 20px;
   height: 20px;
-  background-size: 15px;
 }
 
 .heart.active {
   background-image: url(../assets/icons/heart.png);
   background-repeat: no-repeat;
-  background-position: center bottom;
-  background-position-y: 130%;
-  display: inline-block;
   width: 20px;
   height: 20px;
-  background-size: 15px;
+  background-size: 20px;
 }
 
 .container {
@@ -340,9 +341,75 @@ footer {
   #add-reservation {
     width: 100%;
   }
+}
 
-  /* #close-reservation-popup img {
-    border-top-left-radius: 0;
-    border-top-right-radius: 0;
-  } */
+.home-posters {
+  display: block;
+  margin: auto;
+  border-radius: 20px 20px 20px 20px;
+  box-shadow: 10px 7px 7px 2px rgba(0, 0, 0, 0.6);
+}
+
+.show-name {
+  display: block;
+  text-align: center;
+  margin-top: 1rem;
+  font-family: "Poppins", sans-serif;
+  color: #fff;
+}
+
+.like {
+  display: block;
+  margin: auto;
+  background-color: #44c767;
+  border-radius: 28px;
+  border: 1px solid #18ab29;
+  cursor: pointer;
+  color: #fff;
+  font-family: "Arial", sans-serif;
+  font-size: 12px;
+  padding: 10px 20px;
+  text-shadow: 0 1px 0 #2f6627;
+}
+
+.like:hover {
+  background-color: #5cbf2a;
+}
+
+.like:active {
+  position: relative;
+  top: 1px;
+}
+
+.btns {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.comment-btn,
+.reservation-btn {
+  box-shadow: inset 0 1px 3px 0 #9fb4f2;
+  background: linear-gradient(to bottom, #7892c2 5%, #476e9e 100%);
+  background-color: #7892c2;
+  border-radius: 5px;
+  border: 1px solid #4e6096;
+  display: inline-block;
+  color: #fff;
+  font-family: "Arial", sans-serif;
+  font-size: 12px;
+  padding: 11px 10px;
+  text-shadow: 0 -1px 0 #283966;
+  margin-top: 15px;
+}
+
+.comment-btn:hover,
+.reservation-btn:hover {
+  background: linear-gradient(to bottom, #476e9e 5%, #7892c2 100%);
+  background-color: #476e9e;
+}
+
+.comment-btn:active,
+.reservation-btn:active {
+  position: relative;
+  top: 1px;
 }
