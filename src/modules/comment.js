@@ -1,4 +1,4 @@
-import { fetchShow } from './reservations-api.js';
+import { fetchShow, fetchcomments } from './reservations-api.js';
 
 const comment = document.createElement('div');
 comment.classList.add('reservations');
@@ -6,6 +6,27 @@ comment.classList.add('reservations');
 const closePopUp = () => {
   document.body.removeChild(comment);
   comment.innerHTML = '';
+};
+
+const renderComments = async (showId, container) => {
+  container = container.querySelector('ul');
+  container.innerHTML = '';
+  try {
+    const comm = await fetchcomments(showId);
+    comm.forEach((comments) => {
+      const item = document.createElement('li');
+      item.innerHTML = `
+      ${comments.creation_date} ${comments.username} :  ${comments.comment}  
+      `;
+      container.append(item);
+    });
+  } catch (error) {
+    const item = document.createElement('li');
+    item.innerHTML = `
+      <span class="reservations-error">${error}</span>
+    `;
+    container.append(item);
+  }
 };
 
 const showPop = async (showId) => {
@@ -23,6 +44,11 @@ const showPop = async (showId) => {
         <li>Avg. Rating: ${show.rating.average}</li>
         <li>Show type:  ${show.type}</li>
         <li>Genres: ${show.genres.map((genre) => `<span class="genre-label"> ${genre}</span>`)}</li>
+        </ul>
+    </section>
+    <section id="show-reservations">
+      <h3>comments</h3>
+      <ul class="reservations-list">
       </ul>
       </section>
       <div class="comment-sec">
@@ -34,6 +60,8 @@ const showPop = async (showId) => {
       </div>
       </div>
     `;
+    const commentscontainer = comment.querySelector('#show-reservations');
+    renderComments(showId, commentscontainer);
   } catch (error) {
     comment.innerHTML = `
       <div class="reservation-inner">
