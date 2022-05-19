@@ -319,30 +319,10 @@ footer {
   padding: 20px;
 }
 
-@media screen and (max-width: 768px) {
-  .reservations .reservation-inner {
-    position: relative;
-    width: 98%;
-    margin: 3px auto;
-  }
+.field {
+  background-color: rgb(139, 141, 141);
+}
 
-  .reservation-heading {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .reservations .reservation-inner img {
-    border-top-left-radius: 1em;
-    border-top-right-radius: 1em;
-    width: 100%;
-  }
-
-  #add-reservation {
-    width: 100%;
-  }
-
-  /* #close-reservation-popup img {
-    border-top-left-radius: 0;
-    border-top-right-radius: 0;
-  } */
+.len {
+  background-color: #fff;
 }
