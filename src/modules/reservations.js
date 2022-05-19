@@ -1,4 +1,4 @@
-import { fetchShow, fetchReservations } from './reservations-api.js';
+import { fetchShow, fetchReservations, postReservation } from './reservations-api.js';
 
 const reservationsPopUp = document.createElement('div');
 reservationsPopUp.classList.add('reservations');
@@ -30,6 +30,26 @@ const renderReservations = async (showId, container) => {
   }
 };
 
+const addReservation = async (username, dateStart, dateEnd, itemId) => {
+  const formStatus = document.getElementById('form-status');
+  try {
+    await postReservation({
+      username, date_start: dateStart, date_end: dateEnd, item_id: itemId,
+    });
+    formStatus.classList.add('success');
+    formStatus.innerHTML = 'Reservation Added';
+    setTimeout(() => {
+      formStatus.remove();
+    }, 2000);
+  } catch (error) {
+    formStatus.classList.add('error');
+    formStatus.innerHTML = error;
+    setTimeout(() => {
+      formStatus.remove();
+    }, 2000);
+  }
+};
+
 const showPopUp = async (showId) => {
   try {
     document.body.classList.add('notScrollable');
@@ -55,9 +75,27 @@ const showPopUp = async (showId) => {
           <ul class="reservations-list">
           </ul>
         </section>
+        <section id="reservation-form">
+          <h3>Add a Reservation</h3>
+          <form id="add-reservation">
+            <span id="form-status"></span>
+            <input type="text" name="username" id="username" placeholder="Your name" required/>
+            <input type="date" name="date_start" id="date_start" placeholder="Start date" required />
+            <input type="date" name="date_end" id="date_end" placeholder="End date" required />
+            <button type="submit">Reserve</button>
+          </form>
+        </section>
       </div>
     `;
     const reservationsListContainer = reservationsPopUp.querySelector('#show-reservations');
+    const reservationForm = reservationsPopUp.querySelector('#add-reservation');
+    reservationForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const { username, date_start: dateStart, date_end: dateEnd } = reservationForm.elements;
+      await addReservation(username.value, dateStart.value, dateEnd.value, showId);
+      await renderReservations(showId, reservationsListContainer);
+      reservationForm.reset();
+    });
     renderReservations(showId, reservationsListContainer);
   } catch (error) {
     reservationsPopUp.innerHTML = `

@@ -117,12 +117,65 @@ footer {
   text-decoration: none;
 }
 
-#show-reservations {
-  padding: 5em;
+#show-reservations,
+#reservation-form {
+  padding: 2em;
   text-align: center;
 }
 
-#show-reservations h3 {
+#add-reservation {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  width: 50%;
+  margin: 2em auto;
+}
+
+#add-reservation button {
+  align-self: flex-start;
+  padding: 10px 15px;
+  border-radius: 0.7em;
+  border: 2px solid green;
+  background-color: rgb(204, 255, 204);
+  font-weight: 600;
+  color: green;
+  cursor: pointer;
+}
+
+.comment-sec input {
+  width: 30%;
+  padding: 5px;
+}
+
+#add-reservation input {
+  height: 2.8em;
+  padding: 5px 10px;
+  margin: 2px 2px;
+  border-radius: 0.7em;
+  border: 2px gray solid;
+  outline: none;
+}
+
+#add-reservation input:focus {
+  border: 2px rgb(63, 140, 255) solid;
+}
+
+#form-status.success {
+  padding: 0.8em;
+  background-color: rgb(192, 255, 200);
+  color: rgb(0, 71, 9);
+  border-radius: 0.7em;
+}
+
+#form-status.error {
+  padding: 0.8em;
+  background-color: pink;
+  color: rgb(71, 0, 0);
+  border-radius: 0.7em;
+}
+
+#show-reservations h3,
+#reservation-form h3 {
   font-weight: 600;
 }
 
@@ -193,11 +246,6 @@ footer {
   gap: 20px;
   margin-left: 40px;
   margin-bottom: 15px;
-}
-
-.comment-sec input {
-  width: 30%;
-  padding: 5px;
 }
 
 .comment-sec textarea {
