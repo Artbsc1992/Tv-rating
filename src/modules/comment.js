@@ -8,7 +8,7 @@ const closePopUp = () => {
   comment.innerHTML = '';
 };
 
-const commentCounter = (commentsList) => commentsList.length;
+export const commentCounter = (commentsList) => commentsList.length;
 
 const renderComments = async (showId, container) => {
   const counterContainer = container.querySelector('#reservations-counter');
