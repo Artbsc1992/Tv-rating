@@ -8,11 +8,15 @@ const closePopUp = () => {
   comment.innerHTML = '';
 };
 
+const commentCounter = (commentsList) => commentsList.length;
+
 const renderComments = async (showId, container) => {
+  const counterContainer = container.querySelector('#reservations-counter');
   container = container.querySelector('ul');
   container.innerHTML = '';
   try {
     const comm = await fetchcomments(showId);
+    counterContainer.innerHTML = commentCounter(comm);
     comm.forEach((comments) => {
       const item = document.createElement('li');
       item.innerHTML = `
@@ -71,7 +75,7 @@ const showPop = async (showId) => {
         </ul>
     </section>
     <section id="show-reservations">
-      <h3>comments</h3>
+      <h3> ( <span id="reservations-counter">0</span> ) Comments</h3>
       <ul class="reservations-list">
       </ul>
       </section>
