@@ -53,8 +53,6 @@ const addcomments = async (username, comment, itemId) => {
   }
 };
 
-
-
 const showPop = async (showId) => {
   try {
     document.body.append(comment);
