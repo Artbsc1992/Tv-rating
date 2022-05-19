@@ -10,7 +10,7 @@ const closePopUp = () => {
 };
 
 const resCounter = (reservationsList) => {
-  return reservationsList.length || 0;
+  return reservationsList.length;
 }
 
 const renderReservations = async (showId, container) => {
@@ -78,7 +78,7 @@ const showPopUp = async (showId) => {
             </ul>
         </section>
         <section id="show-reservations">
-          <h3>Show's Reservations <span id="reservations-counter"></span></h3>
+          <h3>Show's Reservations <span id="reservations-counter" class="badge">0</span></h3>
           <ul class="reservations-list">
           </ul>
         </section>
