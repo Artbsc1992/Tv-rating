@@ -40,7 +40,7 @@ const addcomments = async (username, comment, itemId) => {
       username, comment, item_id: itemId,
     });
     formStatus.classList.add('success');
-    formStatus.innerHTML = 'Reservation Added';
+    formStatus.innerHTML = 'Comment Added';
     setTimeout(() => {
       formStatus.remove();
     }, 2000);
