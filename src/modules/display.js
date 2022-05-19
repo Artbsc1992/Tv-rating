@@ -10,6 +10,7 @@ const ul = document.createElement('ul');
 ul.classList = 'showList';
 const div = document.querySelector('.shows');
 div.append(ul);
+const counter = document.querySelector('a');
 
 const filterLikes = (showId, likesList) => {
   const result = likesList.find((item) => +item.item_id === showId);
@@ -18,9 +19,14 @@ const filterLikes = (showId, likesList) => {
   }
   return result.likes;
 };
+
 const render = async () => {
   ul.innerHTML = '';
   const shows = await fetchShows();
+  const counterShows = () => shows.length;
+
+  counter.textContent = `Shows (${counterShows()})`;
+
   const fetchedLikes = await getLikes();
   shows.forEach((show) => {
     const li = document.createElement('li');
