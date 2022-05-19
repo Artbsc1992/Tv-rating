@@ -4,7 +4,7 @@ import showPopUp from './reservations.js';
 
 import showPop from './comment.js';
 
-import { getLikes } from './likesApi.js';
+import { getLikes, putLikes } from './likesApi.js';
 
 const ul = document.createElement('ul');
 ul.classList = 'showList';
@@ -14,9 +14,9 @@ div.append(ul);
 const filterLikes = (showId, likesList) => {
   const result = likesList.find((item) => +item.item_id === showId);
   if (!result) {
-    return 'Likes 0';
+    return 0;
   }
-  return `Likes ${result.likes}`;
+  return result.likes;
 };
 const render = async () => {
   ul.innerHTML = '';
@@ -24,11 +24,12 @@ const render = async () => {
   const fetchedLikes = await getLikes();
   shows.forEach((show) => {
     const li = document.createElement('li');
-    const likes = filterLikes(show.id, fetchedLikes);
+    let likes = filterLikes(show.id, fetchedLikes);
     li.innerHTML = `
             <img src="${show.img}" alt="movie">
             <p class='show-name'>${show.name} ${show.id}</p>
-            <button data-id='${show.id}' class='like'>${likes}</button>
+            <button type='button' data-id='${show.id}' class='like'>Likes ${likes}</button>
+            <span class='heart'></span>
             <button data-comment="true" data-id="${show.id}">Comments</button>
             <button data-reservation="true" data-id="${show.id}">Reservations</button>
         `;
@@ -41,6 +42,14 @@ const render = async () => {
 
     ul.append(li);
     commentBtn.addEventListener('click', (e) => showPop(e.target.dataset.id));
+
+    const heartContainer = li.querySelector('.heart');
+    const likeBtn = li.querySelector('.like');
+    likeBtn.addEventListener('click', async () => {
+      heartContainer.classList.add('active');
+      await putLikes(show.id);
+      likeBtn.innerHTML = `Likes ${likes += 1}`;
+    });
   });
 };
 

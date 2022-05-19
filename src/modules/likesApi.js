@@ -6,14 +6,12 @@ export const getLikes = async () => {
   return showLikes;
 };
 
-export const putLikes = async (itemId) => {
-  const response = await fetch(likesApi, {
+export const putLikes = async (idShow) => {
+  await fetch(likesApi, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
     },
-    body: JSON.stringify({ itemId }),
+    body: JSON.stringify({ item_id: idShow }),
   });
-  const likes = response.json();
-  return likes;
 };
