@@ -9,6 +9,10 @@ const closePopUp = () => {
   reservationsPopUp.innerHTML = '';
 };
 
+const resCounter = (reservationsList) => {
+  return reservationsList.length;
+}
+
 const renderReservations = async (showId, container) => {
   container = container.querySelector('ul');
   container.innerHTML = '';
