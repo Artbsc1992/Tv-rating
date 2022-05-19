@@ -9,11 +9,15 @@ const closePopUp = () => {
   reservationsPopUp.innerHTML = '';
 };
 
+const resCounter = (reservationsList) => reservationsList.length;
+
 const renderReservations = async (showId, container) => {
+  const counterContainer = container.querySelector('#reservations-counter');
   container = container.querySelector('ul');
   container.innerHTML = '';
   try {
     const reservations = await fetchReservations(showId);
+    counterContainer.innerHTML = resCounter(reservations);
     reservations.forEach((reservation) => {
       const item = document.createElement('li');
       item.innerHTML = `
@@ -71,7 +75,7 @@ const showPopUp = async (showId) => {
             </ul>
         </section>
         <section id="show-reservations">
-          <h3>Show's Reservations</h3>
+          <h3>Show's Reservations <span id="reservations-counter" class="badge">0</span></h3>
           <ul class="reservations-list">
           </ul>
         </section>

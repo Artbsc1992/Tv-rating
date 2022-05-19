@@ -183,6 +183,15 @@ footer {
   margin-top: 1em;
 }
 
+.badge {
+  padding: 3px 10px;
+  background-color: rgb(134, 197, 255);
+  color: rgb(0, 69, 116);
+  border-radius: 5px;
+  border: 1px solid rgb(0, 69, 116);
+  margin-left: 10px;
+}
+
 #show-reservations .reservations-error {
   padding: 0.8em;
   background-color: pink;
