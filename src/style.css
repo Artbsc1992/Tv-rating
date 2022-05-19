@@ -123,10 +123,6 @@ footer {
   text-align: center;
 }
 
-#reservation-form {
-  border-top: 1px solid rgb(226, 226, 226);
-}
-
 #add-reservation {
   display: flex;
   flex-direction: column;
@@ -197,7 +193,6 @@ footer {
 }
 
 #show-reservations .reservations-error {
-  display: block;
   padding: 0.8em;
   background-color: pink;
   color: rgb(71, 0, 0);
@@ -213,10 +208,8 @@ footer {
 
 #close-reservation-popup img {
   width: 20px;
+  border-top-left-radius: 0;
   cursor: pointer;
-  background-color: white;
-  padding: 6px;
-  border-radius: 50%;
 }
 
 .poppup {
