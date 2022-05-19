@@ -123,6 +123,10 @@ footer {
   text-align: center;
 }
 
+#reservation-form {
+  border-top: 1px solid rgb(226, 226, 226);
+}
+
 #add-reservation {
   display: flex;
   flex-direction: column;
@@ -193,6 +197,7 @@ footer {
 }
 
 #show-reservations .reservations-error {
+  display: block;
   padding: 0.8em;
   background-color: pink;
   color: rgb(71, 0, 0);
@@ -208,8 +213,10 @@ footer {
 
 #close-reservation-popup img {
   width: 20px;
-  border-top-left-radius: 0;
   cursor: pointer;
+  background-color: white;
+  padding: 6px;
+  border-radius: 50%;
 }
 
 .poppup {
@@ -310,4 +317,32 @@ footer {
 .container {
   background-color: aqua;
   padding: 20px;
+}
+
+@media screen and (max-width: 768px) {
+  .reservations .reservation-inner {
+    position: relative;
+    width: 98%;
+    margin: 3px auto;
+  }
+
+  .reservation-heading {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .reservations .reservation-inner img {
+    border-top-left-radius: 1em;
+    border-top-right-radius: 1em;
+    width: 100%;
+  }
+
+  #add-reservation {
+    width: 100%;
+  }
+
+  /* #close-reservation-popup img {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+  } */
 }
