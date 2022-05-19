@@ -21,9 +21,7 @@ const fetchcomments = async (showId) => {
   return comments;
 };
 const fetchReservations = async (showId) => {
-  const res = await fetch(
-    `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/RAGwAMc1vyzTWmF6xGjO/reservations?item_id=${showId}`
-  );
+  const res = await fetch(`https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/RAGwAMc1vyzTWmF6xGjO/reservations?item_id=${showId}`,);
   if (res.status === 400) {
     throw new Error('This show doesnt have reservations yet.');
   }
@@ -48,26 +46,22 @@ const postReservation = async (reservation) => {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify(reservation),
-    }
+    },
   );
 
-  if (!res.ok) {
-    throw new Error('Something went wrong while adding a new reservation.');
-  }
+  if (!res.ok) {throw new Error('Something went wrong while adding a new reservation.');}
 
   return true;
 };
 
 const postComment = async (commentss) => {
-  const res = await fetch(
-    'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/RAGwAMc1vyzTWmF6xGjO/comments',
-    {
+  const res = await fetch('https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/RAGwAMc1vyzTWmF6xGjO/comments',{
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify(commentss),
-    }
+    },
   );
 
   if (!res.ok) {
