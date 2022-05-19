@@ -64,7 +64,7 @@ const postComment = async (commentss) => {
   });
 
   if (!res.ok) {
-    throw new Error('Something went wrong while adding a new reservation.');
+    throw new Error('Something went wrong while adding a new comments.');
   }
 
   return true;

@@ -79,8 +79,8 @@ const showPop = async (showId) => {
       <h2>Add a comment</h2>
       <form action="" id="add" >
       <span id="form-status"></span>
-      <input type="text" name="username" placeholder="Your name">
-      <textarea name="comment" id="" cols="10" rows="10" placeholder="your insights" ></textarea>
+      <input type="text" name="username" placeholder="Your name" required >
+      <textarea name="comment" id="" cols="10" rows="10" placeholder="your insights" required ></textarea>
       <button type="submit"> Post </button>
       </form>
       </div>
