@@ -413,3 +413,11 @@ footer {
   position: relative;
   top: 1px;
 }
+
+.field {
+  background-color: rgb(139, 141, 141);
+}
+
+.len {
+  background-color: #fff;
+}

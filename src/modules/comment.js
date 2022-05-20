@@ -1,4 +1,4 @@
-import { fetchShow, fetchcomments } from './reservations-api.js';
+import { fetchShow, fetchcomments, postComment } from './reservations-api.js';
 
 const comment = document.createElement('div');
 comment.classList.add('reservations');
@@ -8,15 +8,23 @@ const closePopUp = () => {
   comment.innerHTML = '';
 };
 
+const commentCounter = (commentsList) => commentsList.length;
+
 const renderComments = async (showId, container) => {
+  const counterContainer = container.querySelector('#reservations-counter');
   container = container.querySelector('ul');
   container.innerHTML = '';
   try {
     const comm = await fetchcomments(showId);
+    counterContainer.innerHTML = commentCounter(comm);
     comm.forEach((comments) => {
       const item = document.createElement('li');
       item.innerHTML = `
-      ${comments.creation_date} ${comments.username} :  ${comments.comment}  
+      <fieldset class='field' > 
+      <legend class='len' >${comments.username}</legend>
+      ${comments.comment} 
+      </fieldset>
+      
       `;
       container.append(item);
     });
@@ -26,6 +34,26 @@ const renderComments = async (showId, container) => {
       <span class="reservations-error">${error}</span>
     `;
     container.append(item);
+  }
+};
+
+const addcomments = async (username, comment, itemId) => {
+  const formStatus = document.getElementById('form-status');
+  try {
+    await postComment({
+      username, comment, item_id: itemId,
+    });
+    formStatus.classList.add('success');
+    formStatus.innerHTML = 'Comment Added';
+    setTimeout(() => {
+      formStatus.remove();
+    }, 2000);
+  } catch (error) {
+    formStatus.classList.add('error');
+    formStatus.innerHTML = error;
+    setTimeout(() => {
+      formStatus.remove();
+    }, 2000);
   }
 };
 
@@ -47,20 +75,31 @@ const showPop = async (showId) => {
         </ul>
     </section>
     <section id="show-reservations">
-      <h3>comments</h3>
+      <h3> ( <span id="reservations-counter">0</span> ) Comments</h3>
       <ul class="reservations-list">
       </ul>
       </section>
       <div class="comment-sec">
       <h2>Add a comment</h2>
-      <form action="">
-      <input type="text" placeholder="Your name">
-      <textarea name="" id="" cols="10" rows="10" placeholder="your insights" ></textarea>
+      <form action="" id="add" >
+      <span id="form-status"></span>
+      <input type="text" name="username" placeholder="Your name" required >
+      <textarea name="comment" id="" cols="10" rows="10" placeholder="your insights" required ></textarea>
+      <button type="submit"> Post </button>
       </form>
       </div>
       </div>
     `;
     const commentscontainer = comment.querySelector('#show-reservations');
+
+    const commentForm = comment.querySelector('#add');
+    commentForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const { username, comment } = commentForm.elements;
+      await addcomments(username.value, comment.value, showId);
+      await renderComments(showId, commentscontainer);
+      commentForm.reset();
+    });
     renderComments(showId, commentscontainer);
   } catch (error) {
     comment.innerHTML = `
