@@ -98,7 +98,7 @@ footer {
 
 .reservations .reservation-inner {
   position: relative;
-  width: 60%;
+  width: 70%;
   margin: 5em auto;
   background-color: white;
   border-radius: 1em;
@@ -318,6 +318,14 @@ footer {
 .container {
   background-color: aqua;
   padding: 20px;
+}
+
+@media screen and (max-width: 1024px) {
+  .reservations .reservation-inner {
+    position: relative;
+    width: 80%;
+    margin: 1em auto;
+  }
 }
 
 @media screen and (max-width: 768px) {
