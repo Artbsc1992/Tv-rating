@@ -85,9 +85,9 @@ const showPopUp = async (showId) => {
           <h3>Add a Reservation</h3>
           <form id="add-reservation">
             <span id="form-status"></span>
-            <input type="text" name="username" id="username" placeholder="Your name" />
-            <input type="date" name="date_start" id="date_start" placeholder="Start date"  />
-            <input type="date" name="date_end" id="date_end" placeholder="End date"  />
+            <input type="text" name="username" id="username" placeholder="Your name"required />
+            <input type="date" name="date_start" id="date_start" placeholder="Start date" required />
+            <input type="date" name="date_end" id="date_end" placeholder="End date" required />
             <button type="submit">Reserve</button>
           </form>
         </section>
