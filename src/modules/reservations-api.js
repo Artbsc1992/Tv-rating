@@ -8,7 +8,7 @@ const fetchShow = async (showId) => {
 };
 
 const fetchcomments = async (showId) => {
-  const res = await fetch(`https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/RAGwAMc1vyzTWmF6xGjO/comments?item_id=${showId}`);
+  const res = await fetch(`https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/t5kglK2SXwpjguYAvFPP/comments?item_id=${showId}`);
   if (res.status === 400) {
     throw new Error('This show doesnt have comments yet.');
   }
@@ -21,7 +21,7 @@ const fetchcomments = async (showId) => {
   return comments;
 };
 const fetchReservations = async (showId) => {
-  const res = await fetch(`https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/RAGwAMc1vyzTWmF6xGjO/reservations?item_id=${showId}`);
+  const res = await fetch(`https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/t5kglK2SXwpjguYAvFPP/reservations?item_id=${showId}`);
   if (res.status === 400) {
     throw new Error('This show doesnt have reservations yet.');
   }
@@ -39,7 +39,7 @@ const postReservation = async (reservation) => {
   reservation.date_end = new Date(reservation.date_end);
 
   const res = await fetch(
-    'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/RAGwAMc1vyzTWmF6xGjO/reservations',
+    'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/t5kglK2SXwpjguYAvFPP/reservations',
     {
       method: 'POST',
       headers: {
@@ -55,7 +55,7 @@ const postReservation = async (reservation) => {
 };
 
 const postComment = async (commentss) => {
-  const res = await fetch('https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/RAGwAMc1vyzTWmF6xGjO/comments', {
+  const res = await fetch('https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/t5kglK2SXwpjguYAvFPP/comments', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
