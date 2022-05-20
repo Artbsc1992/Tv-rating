@@ -142,7 +142,8 @@ footer {
   margin: 2em auto;
 }
 
-#add-reservation button, .comment-sec button {
+#add-reservation button,
+.comment-sec button {
   align-self: flex-start;
   padding: 10px 15px;
   border-radius: 0.7em;
@@ -438,10 +439,8 @@ footer {
 }
 
 .len {
- 
   background-color: #7f89a5;
   border-radius: 15px;
-
 }
 
 .commentsDev {
@@ -456,24 +455,20 @@ footer {
   overflow-y: scroll;
 }
 
-/* width */
 ::-webkit-scrollbar {
   width: 5px;
 }
 
-/* Track */
 ::-webkit-scrollbar-track {
-  background: #f1f1f1; 
-}
- 
-/* Handle */
-::-webkit-scrollbar-thumb {
-  background: #7f89a5; 
+  background: #f1f1f1;
 }
 
-/* Handle on hover */
+::-webkit-scrollbar-thumb {
+  background: #7f89a5;
+}
+
 ::-webkit-scrollbar-thumb:hover {
-  background: #555; 
+  background: #555;
 }
 
 .displayimg {
