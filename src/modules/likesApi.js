@@ -1,4 +1,4 @@
-const likesApi = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/RAGwAMc1vyzTWmF6xGjO/likes';
+const likesApi = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/t5kglK2SXwpjguYAvFPP/likes';
 
 export const getLikes = async () => {
   const response = await fetch(likesApi);
