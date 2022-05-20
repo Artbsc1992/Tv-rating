@@ -12,9 +12,9 @@
 - JavaScript
 - Webpack
 
-## Live Demo (if available)
+## Live Demo 
 
-[Live Demo Link]()
+[Live Demo Link](https://artbsc1992.github.io/Tv-rating/)
 
 <img src="./assets/icons/projectss.png" alt="Saifullah"/>
 
