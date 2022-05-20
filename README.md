@@ -12,10 +12,16 @@
 - JavaScript
 - Webpack
 
+## Project Presentation
+
+[Video](https://drive.google.com/file/d/1wDA2SaFIRhcZcS21-9UA5d5jzo4N6vlI/view?usp=sharing)
+
 ## Live Demo 
 
 [Live Demo Link](https://artbsc1992.github.io/Tv-rating/)
 
+
+## App Screen-shot
 <img src="./assets/icons/ourproject.png" alt="Projet image"/>
 
 
