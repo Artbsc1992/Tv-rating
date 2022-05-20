@@ -34,7 +34,7 @@ const render = async () => {
     let likes = filterLikes(show.id, fetchedLikes);
     li.innerHTML = `
             <img class='home-posters' src="${show.img}" alt="movie">
-            <img class='heart' src="../img/love.png" alt='heart'>
+            <img class='heart' src="./img/love.png" alt='heart'>
             <p class='show-name'>${show.name}</p>
             <button type='button' data-id='${show.id}' class='like'>Likes ${likes}</button>
             <div class='btns'>
