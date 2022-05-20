@@ -155,15 +155,9 @@ footer {
 }
 
 .comment-sec input {
-  width: 30%;
-  padding: 5px;
-}
-
-.comment-sec input {
   padding: 5px;
   width: 70%;
   height: 2.8em;
-  padding: 5px 11px;
   margin: 2px 2px;
   border-radius: 0.7em;
   border: 2px gray solid;
