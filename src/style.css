@@ -142,6 +142,7 @@ footer {
   margin: 2em auto;
 }
 
+.comment-sec button,
 #add-reservation button {
   align-self: flex-start;
   padding: 10px 15px;
@@ -154,8 +155,13 @@ footer {
 }
 
 .comment-sec input {
-  width: 30%;
   padding: 5px;
+  width: 70%;
+  height: 2.8em;
+  margin: 2px 2px;
+  border-radius: 0.7em;
+  border: 2px gray solid;
+  outline: none;
 }
 
 #add-reservation input {
@@ -255,11 +261,12 @@ footer {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  width: 50%;
 }
 
 .comment-sec h2 {
   align-self: center;
-  margin: 20px 20px 20px 20px;
+  margin: 3px 20px 10px 20px;
 }
 
 .comment-sec form {
@@ -272,8 +279,12 @@ footer {
 }
 
 .comment-sec textarea {
-  padding: 5px;
-  width: 40%;
+  width: 80%;
+  padding: 5px 10px;
+  margin: 2px 2px;
+  border-radius: 0.7em;
+  border: 2px gray solid;
+  outline: none;
 }
 
 .detail-sec {
@@ -422,9 +433,47 @@ footer {
 }
 
 .field {
-  background-color: rgb(139, 141, 141);
+  background-color: #231d53;
+  border-radius: 15px;
+  margin-top: 5px;
+  border: none;
+  color: #fff;
 }
 
 .len {
-  background-color: #fff;
+  background-color: #7892c2;
+  border-radius: 15px;
+  padding: 3px 10px;
+}
+
+.commentsDev {
+  display: flex;
+  padding: 8px;
+  margin-top: 5px;
+}
+
+#show-comments {
+  width: 50%;
+  height: 400px;
+  overflow-y: scroll;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #7f89a5;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.displayimg {
+  height: 500px;
 }
