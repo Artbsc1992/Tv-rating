@@ -142,8 +142,8 @@ footer {
   margin: 2em auto;
 }
 
-#add-reservation button,
-.comment-sec button {
+.comment-sec button,
+#add-reservation button {
   align-self: flex-start;
   padding: 10px 15px;
   border-radius: 0.7em;
@@ -157,6 +157,17 @@ footer {
 .comment-sec input {
   width: 30%;
   padding: 5px;
+}
+
+.comment-sec input {
+  padding: 5px;
+  width: 70%;
+  height: 2.8em;
+  padding: 5px 11px;
+  margin: 2px 2px;
+  border-radius: 0.7em;
+  border: 2px gray solid;
+  outline: none;
 }
 
 #add-reservation input {
@@ -271,17 +282,6 @@ footer {
   gap: 20px;
   margin-left: 40px;
   margin-bottom: 15px;
-}
-
-.comment-sec input {
-  padding: 5px;
-  width: 70%;
-  height: 2.8em;
-  padding: 5px 10px;
-  margin: 2px 2px;
-  border-radius: 0.7em;
-  border: 2px gray solid;
-  outline: none;
 }
 
 .comment-sec textarea {
