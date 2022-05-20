@@ -21,7 +21,7 @@ const renderComments = async (showId, container) => {
       const item = document.createElement('li');
       item.innerHTML = `
       <fieldset class='field' > 
-      <legend class='len' >${comments.username}</legend>
+      <legend class='len' >${comments.username} said</legend>
       ${comments.comment} 
       </fieldset>
       
@@ -64,7 +64,7 @@ const showPop = async (showId) => {
     comment.innerHTML = ` <div class="reservation-inner">
     <span id="close-reservation-popup" ><img src="./img/close.png" alt="Close Reservation Popup"/></span>
     <section class="reservation-heading">
-      <img src="${show.image.original}" alt="${show.name}" />
+      <img class="displayimg" src="${show.image.original}" alt="${show.name}" />
       <ul>
         <li><h2>${show.name}</h2></li> 
         <li>${show.summary}</li>
@@ -74,11 +74,7 @@ const showPop = async (showId) => {
         <li>Genres: ${show.genres.map((genre) => `<span class="genre-label"> ${genre}</span>`)}</li>
         </ul>
     </section>
-    <section id="show-reservations">
-      <h3> ( <span id="reservations-counter">0</span> ) Comments</h3>
-      <ul class="reservations-list">
-      </ul>
-      </section>
+<div class="commentsDev" > 
       <div class="comment-sec">
       <h2>Add a comment</h2>
       <form action="" id="add" >
@@ -88,9 +84,15 @@ const showPop = async (showId) => {
       <button type="submit"> Post </button>
       </form>
       </div>
-      </div>
+
+      <section id="show-comments">
+      <h3> ( <span id="reservations-counter">0</span> ) Comments</h3>
+      <ul class="reservations-list">
+      </ul>
+    </section>
+</div>
     `;
-    const commentscontainer = comment.querySelector('#show-reservations');
+    const commentscontainer = comment.querySelector('#show-comments');
 
     const commentForm = comment.querySelector('#add');
     commentForm.addEventListener('submit', async (e) => {
