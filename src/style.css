@@ -301,10 +301,11 @@ footer {
 
 .heart {
   position: relative;
-  top: -65%;
+  top: -63%;
   left: 82%;
   width: 20px;
   height: 20px;
+  filter: invert(63%) sepia(19%) saturate(5536%) hue-rotate(296deg) brightness(102%) contrast(101%) opacity(90%);
 }
 
 .heart.active {
@@ -313,6 +314,7 @@ footer {
   width: 20px;
   height: 20px;
   background-size: 20px;
+  filter: none;
 }
 
 .container {
@@ -321,6 +323,11 @@ footer {
 }
 
 @media screen and (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    margin-bottom: 1rem;
+  }
+
   .reservations .reservation-inner {
     position: relative;
     width: 98%;
