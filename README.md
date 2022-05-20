@@ -12,9 +12,11 @@
 - JavaScript
 - Webpack
 
-## Live Demo (if available)
+## Live Demo 
 
-[Live Demo Link]()
+[Live Demo Link](https://artbsc1992.github.io/Tv-rating/)
+
+<img src="./assets/icons/ourproject.png" alt="Projet image"/>
 
 
 ## Getting Started
@@ -33,21 +35,20 @@ To get a local copy up and running follow these simple example steps.
 
 👤 **Arturo Hermida**
 
-- GitHub: [@githubhandle](https://github.com/Artbsc1992)
-- Twitter: [@twitterhandle](https://twitter.com/Arturo_D_Rock)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/arturo-hermida29)
+- GitHub: [@Artbsc1992](https://github.com/Artbsc1992)
+- Twitter: [@Arturo_D_Rock](https://twitter.com/Arturo_D_Rock)
+- LinkedIn: [arturo-hermida29](https://linkedin.com/in/arturo-hermida29)
 
 👤 **Saifullah**
 
-- GitHub: [@githubhandle](https://github.com/saifullah767)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://www.linkedin.com/in/saifullah-khan-b0637b169/)
+- GitHub: [@saifullah767](https://github.com/saifullah767)
+- LinkedIn: [saifullah-khan-b0637b169/](https://www.linkedin.com/in/saifullah-khan-b0637b169/)
 
 👤 **Ronald Skinner**
 
-- GitHub: [@githubhandle](https://github.com/rskinnerc)
-- Twitter: [@twitterhandle](https://twitter.com/XSkinner)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+- GitHub: [@rskinnerc](https://github.com/rskinnerc)
+- Twitter: [@XSkinner](https://twitter.com/XSkinner)
+- LinkedIn: [rskinnerc](https://www.linkedin.com/in/rskinnerc/)
 
 ## 🤝 Contributing
 
