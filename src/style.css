@@ -109,6 +109,11 @@ footer {
   width: 50%;
 }
 
+.reservations-list {
+  max-height: 300px;
+  overflow-y: scroll;
+}
+
 .reservation-heading {
   display: flex;
 }
