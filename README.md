@@ -16,7 +16,7 @@
 
 [Live Demo Link](https://artbsc1992.github.io/Tv-rating/)
 
-<img src="./assets/icons/projectss.png" alt="Saifullah"/>
+<img src="./assets/icons/ourproject.png" alt="Projet image"/>
 
 
 ## Getting Started
