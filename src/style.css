@@ -59,7 +59,7 @@ footer h3 {
 
 footer h3 a {
   text-decoration: none;
-  color: #fff;
+  color: #44c767;
 }
 
 nav a:hover {
@@ -93,12 +93,12 @@ footer {
   right: 0;
   z-index: 1000;
   background-color: rgb(226, 225, 225, 80%);
-  overflow: scroll;
+  overflow-y: scroll;
 }
 
 .reservations .reservation-inner {
   position: relative;
-  width: 60%;
+  width: 70%;
   margin: 5em auto;
   background-color: white;
   border-radius: 1em;
@@ -107,6 +107,11 @@ footer {
 .reservations .reservation-inner img {
   border-top-left-radius: 1em;
   width: 50%;
+}
+
+.reservations-list {
+  max-height: 300px;
+  overflow-y: scroll;
 }
 
 .reservation-heading {
@@ -331,6 +336,14 @@ footer {
 .container {
   background-color: aqua;
   padding: 20px;
+}
+
+@media screen and (max-width: 1024px) {
+  .reservations .reservation-inner {
+    position: relative;
+    width: 80%;
+    margin: 1em auto;
+  }
 }
 
 @media screen and (max-width: 768px) {
