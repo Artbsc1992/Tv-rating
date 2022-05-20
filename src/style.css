@@ -427,14 +427,17 @@ footer {
 }
 
 .field {
-  background-color: #7670a987;
+  background-color: #231d53;
   border-radius: 15px;
   margin-top: 5px;
+  border: none;
+  color: #fff;
 }
 
 .len {
-  background-color: #7f89a5;
+  background-color: #7892c2;
   border-radius: 15px;
+  padding: 3px 10px;
 }
 
 .commentsDev {

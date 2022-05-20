@@ -21,7 +21,7 @@ const renderComments = async (showId, container) => {
       const item = document.createElement('li');
       item.innerHTML = `
       <fieldset class='field' > 
-      <legend class='len' >${comments.username}</legend>
+      <legend class='len' >${comments.username} said</legend>
       ${comments.comment} 
       </fieldset>
       
