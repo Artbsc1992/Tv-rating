@@ -146,7 +146,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
   \**************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nconst counterShows = (shows) => shows.length;\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (counterShows);\n\n//# sourceURL=webpack://webpack_template/./src/modules/counter-shows.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nconst counterShows = (shows) => shows.length;\r\n\r\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (counterShows);\n\n//# sourceURL=webpack://webpack_template/./src/modules/counter-shows.js?");
 
 /***/ }),
 
@@ -166,7 +166,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
   \*********************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nconst apiShows = 'https://api.tvmaze.com/shows?page=0';\n\nconst fetchShows = async () => {\n  const response = await fetch(apiShows);\n  let shows = await response.json();\n  shows = shows.slice(0, 10);\n  const mapedShows = shows.map((show) => ({\n    id: show.id,\n    name: show.name,\n    img: show.image.medium,\n  }));\n  return mapedShows;\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (fetchShows);\n\n//# sourceURL=webpack://webpack_template/./src/modules/fetchAPI.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nconst apiShows = 'https://api.tvmaze.com/shows?page=0';\r\n\r\nconst fetchShows = async () => {\r\n  const response = await fetch(apiShows);\r\n  let shows = await response.json();\r\n  shows = shows.slice(0, 10);\r\n  const mapedShows = shows.map((show) => ({\r\n    id: show.id,\r\n    name: show.name,\r\n    img: show.image.medium,\r\n  }));\r\n  return mapedShows;\r\n};\r\n\r\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (fetchShows);\n\n//# sourceURL=webpack://webpack_template/./src/modules/fetchAPI.js?");
 
 /***/ }),
 
